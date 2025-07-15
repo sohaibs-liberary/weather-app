@@ -43,21 +43,21 @@
 
     
 
+    
 
-    const apiurl =  'http://goweather.xyz/weather/taxila';
+    const apiurl =  'http://goweather.xyz/weather/';
 
     const searchBox = document.querySelector('.search input');
     const searchBtn = document.querySelector('.search button');
 
 
-
-   async function checkweather(city) {
-    const response=  await fetch (apiurl + city);
+   async function checkweather() {
+    const response=  await fetch (apiurl );
     var data = await response .json();
 
     console.log(data);
 
-    document.querySelector('.city').innerHTML = data.city + ;
+    document.querySelector('.city').innerHTML = data.city  ;
     document.querySelector('.temp').innerHTML = data.temperature;
     document.querySelector('.humidity').innerHTML = data. description;
     document.querySelector('.wind-speed').innerHTML = data.wind;
@@ -65,11 +65,10 @@
     
    } 
 
-   searchBtn .addEventListener('click', ()=> {
+  /* searchBtn .addEventListener('click', ()=> {
     checkweather(searchBox.value);
-
+*/
    })
-
 
 
 
