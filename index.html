@@ -38,9 +38,40 @@
 </div>
 
 
+
 <script>
 
-    fetch = ('http://goweather.xyz/weather/wah');
+    
+
+
+    const apiurl =  'http://goweather.xyz/weather/taxila';
+
+    const searchBox = document.querySelector('.search input');
+    const searchBtn = document.querySelector('.search button');
+
+
+
+   async function checkweather(city) {
+    const response=  await fetch (apiurl + city);
+    var data = await response .json();
+
+    console.log(data);
+
+    document.querySelector('.city').innerHTML = data.city + ;
+    document.querySelector('.temp').innerHTML = data.temperature;
+    document.querySelector('.humidity').innerHTML = data. description;
+    document.querySelector('.wind-speed').innerHTML = data.wind;
+
+    
+   } 
+
+   searchBtn .addEventListener('click', ()=> {
+    checkweather(searchBox.value);
+
+   })
+
+
+
 
 </script>
 
